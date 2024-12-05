@@ -1,0 +1,11 @@
+framework module MiniPlengi {
+  umbrella header "MiniPlengi.h"
+  export *
+
+  module * { export * }
+}
+
+module MiniPlengi.Swift {
+  header "MiniPlengi-Swift.h"
+  requires objc
+}

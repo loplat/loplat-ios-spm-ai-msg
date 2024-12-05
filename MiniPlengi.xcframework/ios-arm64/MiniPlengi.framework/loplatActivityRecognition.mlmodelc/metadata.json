@@ -1,0 +1,128 @@
+[
+  {
+    "metadataOutputVersion" : "3.0",
+    "shortDescription" : "loplat iOS SDK Activity Recognition ML Model",
+    "outputSchema" : [
+      {
+        "isOptional" : "0",
+        "keyType" : "String",
+        "formattedType" : "Dictionary (String → Double)",
+        "type" : "Dictionary",
+        "name" : "labelProbability",
+        "shortDescription" : "Activity prediction probabilities"
+      },
+      {
+        "isOptional" : "0",
+        "formattedType" : "String",
+        "type" : "String",
+        "name" : "label",
+        "shortDescription" : "Class label of top prediction"
+      },
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Double",
+        "formattedType" : "MultiArray (Double 400)",
+        "shortDescription" : "LSTM state output",
+        "shape" : "[400]",
+        "name" : "stateOut",
+        "type" : "MultiArray"
+      }
+    ],
+    "storagePrecision" : "Float32",
+    "modelParameters" : [
+
+    ],
+    "author" : "Kiwook JUNG",
+    "specificationVersion" : 1,
+    "license" : "loplat",
+    "computePrecision" : "Float16",
+    "stateSchema" : [
+
+    ],
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "10.13",
+      "tvOS" : "11.0",
+      "visionOS" : "1.0",
+      "watchOS" : "4.0",
+      "iOS" : "11.0",
+      "macCatalyst" : "11.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_neuralNetworkClassifier"
+    },
+    "inputSchema" : [
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Double",
+        "formattedType" : "MultiArray (Double 100)",
+        "shortDescription" : "acceleration_x window input",
+        "shape" : "[100]",
+        "name" : "acceleration_x",
+        "type" : "MultiArray"
+      },
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Double",
+        "formattedType" : "MultiArray (Double 100)",
+        "shortDescription" : "acceleration_y window input",
+        "shape" : "[100]",
+        "name" : "acceleration_y",
+        "type" : "MultiArray"
+      },
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "0",
+        "dataType" : "Double",
+        "formattedType" : "MultiArray (Double 100)",
+        "shortDescription" : "acceleration_z window input",
+        "shape" : "[100]",
+        "name" : "acceleration_z",
+        "type" : "MultiArray"
+      },
+      {
+        "hasShapeFlexibility" : "0",
+        "isOptional" : "1",
+        "dataType" : "Double",
+        "formattedType" : "MultiArray (Double 400)?",
+        "shortDescription" : "LSTM state input",
+        "shape" : "[400]",
+        "name" : "stateIn",
+        "type" : "MultiArray"
+      }
+    ],
+    "classLabels" : [
+      "Move",
+      "Run",
+      "Slight",
+      "Stationary"
+    ],
+    "generatedClassName" : "loplatActivityRecognition",
+    "userDefinedMetadata" : {
+      "target" : "label",
+      "com.apple.createml.version" : "10.15.5",
+      "max_iterations" : "30",
+      "session_id" : "session_id",
+      "version" : "2",
+      "type" : "activity_classifier",
+      "prediction_window" : "100",
+      "features" : "acceleration_x,acceleration_y,acceleration_z",
+      "Sample Rate" : ""
+    },
+    "neuralNetworkLayerTypeHistogram" : {
+      "Concat" : 2,
+      "BatchNorm" : 1,
+      "ActivationReLU" : 2,
+      "Softmax" : 1,
+      "UniDirectionalLSTM" : 1,
+      "Slice" : 2,
+      "InnerProduct" : 2,
+      "Convolution" : 1,
+      "Reshape" : 1
+    },
+    "method" : "predict"
+  }
+]
