@@ -132,6 +132,9 @@ public enum AiMessageEventType : Swift.Int {
   @objc override dynamic public init()
   @objc deinit
 }
+extension MiniPlengi.Plengi {
+  @objc dynamic public class func registerFcm(fcmToken: Swift.String?)
+}
 extension UIKit.UIViewController {
   @_Concurrency.MainActor @preconcurrency public func topMostViewController() -> UIKit.UIViewController
 }
@@ -323,7 +326,6 @@ extension MiniPlengi.Plengi {
   @objc dynamic public class func getEngineStatus() -> MiniPlengi.EngineStatus
   @objc dynamic public class func isEnabledAdNetwork() -> Swift.Bool
   @objc dynamic public class func enableAdNetwork(_ enableAd: Swift.Bool, enableNoti: Swift.Bool = true) -> MiniPlengi.Result
-  @objc dynamic public class func registerFcm(fcmToken: Swift.String?)
 }
 extension MiniPlengi.Plengi {
   @objc dynamic public class func manual_refreshPlace_foreground() -> MiniPlengi.Result

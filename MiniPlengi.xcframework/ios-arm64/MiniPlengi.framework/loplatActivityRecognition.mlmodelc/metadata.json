@@ -108,8 +108,8 @@
       "session_id" : "session_id",
       "version" : "2",
       "type" : "activity_classifier",
-      "prediction_window" : "100",
       "features" : "acceleration_x,acceleration_y,acceleration_z",
+      "prediction_window" : "100",
       "Sample Rate" : ""
     },
     "neuralNetworkLayerTypeHistogram" : {
